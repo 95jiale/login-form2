@@ -19,7 +19,7 @@ function App() {
       placeholder: "Username",
       errorMessage:
         "Username should be 3-16 characters and shouldn't include special characters!",
-      label: "Username",
+      label: "Username :",
       pattern: "^[A-Za-z0-9]{3,16}$", //regex
       required: true,
     },
@@ -29,7 +29,7 @@ function App() {
       type: "email",
       placeholder: "Email",
       errorMessage: "Invalid email!",
-      label: "Email",
+      label: "Email :",
       required: true,
     },
     {
@@ -38,7 +38,7 @@ function App() {
       type: "date",
       placeholder: "Birthday",
       errorMessage: "",
-      label: "Birthday",
+      label: "Birthday :",
     },
     {
       id: 4,
@@ -47,7 +47,7 @@ function App() {
       placeholder: "Password",
       errorMessage:
         "Password should be 8-20 characters and it should include at least 1 uppercase letter, 1 number, 1 special character!",
-      label: "Password",
+      label: "Password :",
       pattern:
         "(?=^.{8,}$)((?=.*d)|(?=.*W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$",
       required: true,
@@ -58,7 +58,7 @@ function App() {
       type: "password",
       placeholder: "Confirm Password",
       errorMessage: "Password don't match!",
-      label: "Confirm Password",
+      label: "Confirm Password :",
       pattern: values.password,
       required: true,
     },

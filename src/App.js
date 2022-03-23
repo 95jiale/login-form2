@@ -1,5 +1,6 @@
 import "./App.css";
 import FormInput from "./components/FormInput";
+import PasswordInput from "./components/PasswordInput";
 import React, { useState } from "react";
 
 function App() {
@@ -7,6 +8,10 @@ function App() {
     username: "",
     email: "",
     birthday: "",
+    password: "",
+    confirmPassword: "",
+  });
+  const [values2, setValues2] = useState({
     password: "",
     confirmPassword: "",
   });
@@ -40,6 +45,8 @@ function App() {
       errorMessage: "",
       label: "Birthday :",
     },
+  ];
+  const inputs2 = [
     {
       id: 4,
       name: "password",
@@ -63,7 +70,6 @@ function App() {
       required: true,
     },
   ];
-
   console.log("re-rendered");
 
   const handleSubmit = (e) => {
@@ -72,6 +78,7 @@ function App() {
 
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
+    setValues2({ ...values2, [e.target.name]: e.target.value });
   };
 
   console.log(values);
@@ -80,6 +87,7 @@ function App() {
       <form onSubmit={handleSubmit}>
         <h1>Register</h1>
         {inputs.map((input) => (
+          // if (input.id !== 4 || 5) {
           <FormInput
             key={input.id}
             {...input}
@@ -87,7 +95,15 @@ function App() {
             onChange={onChange}
           />
         ))}
-        <button>Submit</button>
+        {inputs2.map((input) => (
+          <PasswordInput
+            key={input.id}
+            {...input}
+            value={values2[input.name]}
+            onChange={onChange}
+          />
+        ))}
+        <button className="submit-btn">Submit</button>
       </form>
     </div>
   );

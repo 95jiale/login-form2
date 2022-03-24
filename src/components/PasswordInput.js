@@ -17,11 +17,10 @@ const PasswordInput = (props) => {
     setShowPassword(!showPassword);
   };
   return (
-    <div className="formInput">
+    <div className="passwordInput">
       <label>{label}</label>
 
       <container>
-        <span>{errorMessage}</span>
         <input
           {...inputProps}
           onChange={onChange}
@@ -36,6 +35,7 @@ const PasswordInput = (props) => {
           {showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
         </button>
       </container>
+      <span>{errorMessage}</span>
     </div>
   );
 };

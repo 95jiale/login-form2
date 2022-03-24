@@ -1,12 +1,15 @@
-import "./App.css";
+import "./Form.css";
 import FormInput from "./components/FormInput";
 import PasswordInput from "./components/PasswordInput";
 import React, { useState } from "react";
-function App() {
+
+const Form = () => {
   const [values, setValues] = useState({
     username: "",
     email: "",
     birthday: "",
+    password: "",
+    confirmPassword: "",
   });
   const [values2, setValues2] = useState({
     password: "",
@@ -80,7 +83,7 @@ function App() {
 
   console.log(values);
   return (
-    <div className="App">
+    <div className="Form">
       <form onSubmit={handleSubmit}>
         <h1>Register</h1>
         {inputs.map((input) => (
@@ -102,8 +105,8 @@ function App() {
         ))}
         <button className="submit-btn">Submit</button>
       </form>
+      {}
     </div>
   );
-}
-
-export default App;
+};
+export default Form;
